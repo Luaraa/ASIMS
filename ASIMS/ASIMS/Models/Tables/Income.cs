@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ASIMS.Models
+namespace ASIMS.Models.Tables
 {
     public partial class Income
     {
-        public string Vno { get; set; }
+        public int Vno { get; set; }
         public int? Vnumber { get; set; }
         public float? Vincome { get; set; }
 

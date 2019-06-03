@@ -12163,11 +12163,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\github\\ASIMS\\ASIMS\\ASIMS\\ASIMS.csproj",
+      "projectUniqueName": "F:\\课程设计\\信息系统综合设计\\汽车销售信息管理系统\\ASIMS\\ASIMS\\ASIMS.csproj",
       "projectName": "ASIMS",
-      "projectPath": "F:\\github\\ASIMS\\ASIMS\\ASIMS\\ASIMS.csproj",
+      "projectPath": "F:\\课程设计\\信息系统综合设计\\汽车销售信息管理系统\\ASIMS\\ASIMS\\ASIMS.csproj",
       "packagesPath": "C:\\Users\\WanQBin\\.nuget\\packages\\",
-      "outputPath": "F:\\github\\ASIMS\\ASIMS\\ASIMS\\obj\\",
+      "outputPath": "F:\\课程设计\\信息系统综合设计\\汽车销售信息管理系统\\ASIMS\\ASIMS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Microsoft\\Xamarin\\NuGet\\",

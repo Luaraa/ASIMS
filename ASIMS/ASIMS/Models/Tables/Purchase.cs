@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ASIMS.Models
+namespace ASIMS.Models.Tables
 {
     public partial class Purchase
     {
-        public string Pno { get; set; }
-        public string Vno { get; set; }
-        public string Sno { get; set; }
+        public int Pno { get; set; }
+        public int? Vno { get; set; }
+        public int? Sno { get; set; }
         public float? PcostPrice { get; set; }
         public int? Pnumber { get; set; }
         public DateTime? PrecordDate { get; set; }
