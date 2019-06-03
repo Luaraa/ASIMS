@@ -1,4 +1,5 @@
 ﻿using ASIMS.Models.Tables;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,17 +19,14 @@ namespace ASIMS.Models.Method
         /// <returns>所有用户</returns>
         public List<User> ListAllUser()
         {
-            List<User> users = new List<User>();
             #region
             using (var dbcontext = new asimsContext())
             {
-                foreach (var user in dbcontext.User)
-                {
-                    users.Add(user);
-                }
+                var query = dbcontext.User.FromSql("select * from asims.User").ToList();
+                return query;
             }
             #endregion
-            return users;
+            
         }
         /// <summary>
         /// 查看账号为id用户的详细信息

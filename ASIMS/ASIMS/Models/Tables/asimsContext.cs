@@ -17,7 +17,6 @@ namespace ASIMS.Models.Tables
 
         public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<Cashlist> Cashlist { get; set; }
-        public virtual DbSet<Efmigrationshistory> Efmigrationshistory { get; set; }
         public virtual DbSet<Income> Income { get; set; }
         public virtual DbSet<Inforofvehicle> Inforofvehicle { get; set; }
         public virtual DbSet<Market> Market { get; set; }
@@ -74,20 +73,6 @@ namespace ASIMS.Models.Tables
                     .HasForeignKey<Cashlist>(d => d.Vno)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Reference_13");
-            });
-
-            modelBuilder.Entity<Efmigrationshistory>(entity =>
-            {
-                entity.HasKey(e => e.MigrationId)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("__efmigrationshistory");
-
-                entity.Property(e => e.MigrationId).HasColumnType("varchar(95)");
-
-                entity.Property(e => e.ProductVersion)
-                    .IsRequired()
-                    .HasColumnType("varchar(32)");
             });
 
             modelBuilder.Entity<Income>(entity =>
