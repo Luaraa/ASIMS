@@ -19,13 +19,10 @@ namespace AdminInfor
             #region
             using (var dbcontext = new asimsContext())
             {
-                foreach (var staff in dbcontext.Staff)
-                {
-                    if (staff.Sphone == id && staff.Spassword == password)
-                    {
-                        return true;
-                    }
-                }
+                var staff = dbcontext.Staff
+                    .FirstOrDefault(s => s.Sphone == id && s.Spassword == password);
+                if (staff != null)
+                    return true;
             }
             #endregion
             return false;
