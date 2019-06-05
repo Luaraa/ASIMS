@@ -11,7 +11,6 @@ F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\ASIMS.AssemblyInfo.cs
 F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\ASIMS.TagHelpers.input.cache
 F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\ASIMS.TagHelpers.output.cache
 F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\ASIMS.RazorCoreGenerate.cache
-F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
@@ -31,3 +30,5 @@ F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\ASIMS.csproj.CopyComplete
 F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CustomerLayout.g.cshtml.cs
 F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AdminLayout.g.cshtml.cs
 F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\Razor\Views\UserAccount\Login.g.cshtml.cs
+F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_SalesLayout.g.cshtml.cs
+F:\github\ASIMS\ASIMS\ASIMS\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
