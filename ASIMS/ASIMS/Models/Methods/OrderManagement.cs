@@ -75,15 +75,8 @@ namespace ASIMS.Models.Methods
             using (var dbcontext = new asimsContext())
             {
                 var market = dbcontext.Market
-                    .Single(m => m.Uphone == id && m.Mno == no);
-                try
-                {
-                    return market;
-                }
-                catch (Exception)
-                {
-                    return null;
-                }
+                    .FirstOrDefault(m => m.Uphone == id && m.Mno == no);
+                return market;
             }
             #endregion
         }
@@ -98,16 +91,15 @@ namespace ASIMS.Models.Methods
             using (var dbcontext = new asimsContext())
             {
                 var market = dbcontext.Market
-                    .Single(m => m.Mno == no);
-                try
+                    .FirstOrDefault(m => m.Mno == no);
+                if (market != null)
                 {
                     market.Pflag = 1;
+                    dbcontext.SaveChanges();
                     return true;
                 }
-                catch(Exception)
-                {
+                else
                     return false;
-                }
             }
             #endregion
         }

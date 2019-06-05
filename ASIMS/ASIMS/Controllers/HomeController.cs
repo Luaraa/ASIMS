@@ -15,7 +15,10 @@ namespace ASIMS.Controllers
         {
             UserManagement method = new UserManagement();
             List<User> users = method.ListAllUser();
-            
+            OrderManagement order = new OrderManagement();
+            order.GetOneUserMarket("13279451762", 1);
+            order.GetSomeUserMarket("13279441762");
+            order.CheckMarket(1);
             return View();
         }
     }
