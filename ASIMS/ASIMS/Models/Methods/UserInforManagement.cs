@@ -51,9 +51,20 @@ namespace ASIMS.Models.Methods
         public bool NewPassword(string id, string oldPassword, string newPassword)
         {
             #region
-
+            using (var dbcontext = new asimsContext())
+            {
+                var user = dbcontext.User
+                       .FirstOrDefault(u => u.Uphone == id && u.Upassword == oldPassword);
+                if (user != null)
+                {
+                    user.Upassword = newPassword;
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+                else
+                    return false;
+            }  
             #endregion
-            return false;
         }
         /// <summary>
         /// 修改用户信息

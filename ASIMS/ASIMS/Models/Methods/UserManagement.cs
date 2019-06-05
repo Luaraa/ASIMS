@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 /// 用户管理模块，实现的功能有，
 /// 1.列出所有的用户
 /// 2.查看某一用户的详细信息
+/// 已全部完成
 /// </summary>
 namespace ASIMS.Models.Method
 {
