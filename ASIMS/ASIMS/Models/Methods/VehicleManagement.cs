@@ -1,4 +1,5 @@
 ﻿using ASIMS.Models.Tables;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,14 @@ namespace ASIMS.Models.Methods
         public List<Vehicle> GetAllVehicle()
         {
             #region
-
+            using (var dbcontext = new asimsContext())
+            {
+                var query = dbcontext.Vehicle
+                    .FromSql("select * from asims.Vehicle")
+                    .ToList();
+                return query;
+            }
             #endregion
-            return null;
         }
         /// <summary>
         /// 通过id查询汽车
@@ -27,9 +33,13 @@ namespace ASIMS.Models.Methods
         public Vehicle CheckVehicleThoughId(int id)
         {
             #region
-
+            using (var dbcontext = new asimsContext())
+            {
+                var query = dbcontext.Vehicle
+                    .FirstOrDefault(v => v.Vno == id);
+                return query;
+            }
             #endregion
-            return null;
         }
         /// <summary>
         /// 通过汽车类型查找汽车
@@ -39,9 +49,15 @@ namespace ASIMS.Models.Methods
         public List<Vehicle> CheckVehicleThoughType(string type)
         {
             #region
-
+            using (var dbcontext = new asimsContext())
+            {
+                var query = dbcontext.Vehicle
+                    .FromSql("select * from asims.Vehicle")
+                    .Where(v => v.Vtype == type)
+                    .ToList();
+                return query;
+            }
             #endregion
-            return null;
         }
         /// <summary>
         /// 通过汽车名称进行模糊查询
@@ -65,7 +81,7 @@ namespace ASIMS.Models.Methods
         /// <param name="min">最低价格</param>
         /// <param name="max">最高价格</param>
         /// <returns></returns>
-        public List<Vehicle> CheckVehicleThoughMore(string type,string Ibran,string Irank,float min,float max)
+        public List<Vehicle> CheckVehicleThoughMore(string type, string Ibran, string Irank, float min, float max)
         {
             #region
 
@@ -78,7 +94,7 @@ namespace ASIMS.Models.Methods
         /// <param name="id">用户id</param>
         /// <param name="no">汽车编号</param>
         /// <returns></returns>
-        public bool AddVehicleToCart(string id,int no)
+        public bool AddVehicleToCart(string id, int no)
         {
             #region
 
@@ -91,15 +107,66 @@ namespace ASIMS.Models.Methods
         /// <param name="id">用户id</param>
         /// <param name="no">车辆号</param>
         /// <returns></returns>
-        public bool DeleteVehicleInCart(string id,int no)
+        public bool DeleteVehicleInCart(string id, int no)
         {
             #region
 
             #endregion
             return false;
         }
-
-        
-
+        /// <summary>
+        /// 库存查看
+        /// </summary>
+        /// <returns>库存</returns>
+        public Cashlist GetCashlist()
+        {
+            #region
+            #endregion
+            return null;
+        }
+        /// <summary>
+        /// 进货
+        /// </summary>
+        /// <param name="sid">供应商号</param>
+        /// <param name="vno">汽车编号</param>
+        /// <param name="num">数量</param>
+        /// <returns></returns>
+        public bool Stock(string sid, int vno, int num)
+        {
+            return false;
+        }
+        /// <summary>
+        /// 修改汽车信息
+        /// </summary>
+        /// <param name="vno">汽车编号</param>
+        /// <param name="vehicle">汽车</param>
+        /// <returns></returns>
+        public bool ModifyVehicleInfor(int vno, Vehicle vehicle)
+        {
+            #region
+            #endregion
+            return false;
+        }
+        /// <summary>
+        /// 管理员退货
+        /// </summary>
+        /// <param name="vno">车辆编号</param>
+        /// <param name="num">数量</param>
+        /// <returns></returns>
+        public bool SalesReturn(int vno, int num)
+        {
+            #region
+            #endregion
+            return false;
+        }
+        /// <summary>
+        /// 添加供货商
+        /// </summary>
+        /// <param name="newSuppler">供货商</param>
+        /// <returns></returns>
+        public bool AddSupplier(Suppler newSuppler)
+        {
+            return false;
+        }
     }
 }

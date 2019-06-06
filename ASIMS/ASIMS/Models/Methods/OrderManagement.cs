@@ -84,8 +84,9 @@ namespace ASIMS.Models.Methods
         /// 审核并通过订单，即订单状态置1
         /// </summary>
         /// <param name="no">订单号</param>
-        /// <returns>是否成功</returns>
-        public bool CheckMarket(int no)
+        /// <param name="id">销售人员id</param>
+        /// <returns></returns>
+        public bool CheckMarket(int no,string id)
         {
             #region
             using (var dbcontext = new asimsContext())
@@ -94,6 +95,7 @@ namespace ASIMS.Models.Methods
                     .FirstOrDefault(m => m.Mno == no);
                 if (market != null)
                 {
+                    market.Sphone = id;
                     market.Pflag = 1;
                     dbcontext.SaveChanges();
                     return true;
@@ -102,6 +104,31 @@ namespace ASIMS.Models.Methods
                     return false;
             }
             #endregion
+        }
+        /// <summary>
+        /// 提交订单
+        /// </summary>
+        /// <param name="id">用户id</param>
+        /// <param name="vno">车辆编号</param>
+        /// <returns></returns>
+        public bool SubmitOrder(string id,int vno)
+        {
+            #region
+
+            #endregion
+            return false;
+        }
+        /// <summary>
+        /// 用户退单
+        /// </summary>
+        /// <param name="id">用户id</param>
+        /// <param name="no">订单号</param>
+        /// <returns></returns>
+        public bool ChargeBack(string id,int no)
+        {
+            #region
+            #endregion
+            return false;
         }
 
     }

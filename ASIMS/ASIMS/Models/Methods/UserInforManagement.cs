@@ -63,7 +63,7 @@ namespace ASIMS.Models.Methods
                 }
                 else
                     return false;
-            }  
+            }
             #endregion
         }
         /// <summary>
@@ -76,9 +76,21 @@ namespace ASIMS.Models.Methods
         public bool ModifyInformation(string id, User user, int address)
         {
             #region
-
+            using (var dbcontext = new asimsContext())
+            {
+                var query = dbcontext.User
+                    .FirstOrDefault(u => u.Uphone == id);
+                if (query != null)
+                {
+                    query = user;
+                    query.Uaddress = address;
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+                else
+                    return false;
+            }
             #endregion
-            return false;
         }
     }
 }

@@ -13,12 +13,13 @@ namespace ASIMS.Controllers
     {
         public IActionResult Index()
         {
-            UserManagement method = new UserManagement();
-            List<User> users = method.ListAllUser();
-            OrderManagement order = new OrderManagement();
-            order.GetOneUserMarket("13279451762", 1);
-            order.GetSomeUserMarket("13279441762");
-            order.CheckMarket(1);
+            VehicleManagement method = new VehicleManagement();
+            method.GetAllVehicle();
+            method.CheckVehicleThoughId(121);
+            method.CheckVehicleThoughType("皮卡");
+            StaffManagement staff = new StaffManagement();
+            staff.DeleteStaff("13305068852");
+            staff.SearchStaffThoughName("陈英");
             return View();
         }
     }
