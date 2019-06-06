@@ -1,12 +1,16 @@
 ﻿using ASIMS.Models.Tables;
+using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 /// <summary>
 /// 用户管理模块，实现的功能有，
 /// 1.列出所有的用户
 /// 2.查看某一用户的详细信息
+/// 已全部完成
 /// </summary>
 namespace ASIMS.Models.Method
 {
@@ -18,17 +22,14 @@ namespace ASIMS.Models.Method
         /// <returns>所有用户</returns>
         public List<User> ListAllUser()
         {
-            List<User> users = new List<User>();
             #region
             using (var dbcontext = new asimsContext())
             {
-                foreach (var user in dbcontext.User)
-                {
-                    users.Add(user);
-                }
+                var query = dbcontext.User.FromSql("select * from asims.User").ToList();
+                return query;
             }
             #endregion
-            return users;
+            
         }
         /// <summary>
         /// 查看账号为id用户的详细信息

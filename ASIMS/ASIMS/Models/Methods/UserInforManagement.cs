@@ -14,7 +14,7 @@ namespace ASIMS.Models.Methods
         /// <param name="user">用户对象</param>
         /// <param name="address">地址号</param>
         /// <returns></returns>
-        public bool Register(User user,int address)
+        public bool Register(User user, int address)
         {
             #region
 
@@ -27,12 +27,19 @@ namespace ASIMS.Models.Methods
         /// <param name="id">用户id</param>
         /// <param name="password">用户密码</param>
         /// <returns></returns>
-        public bool Login(string id,string password)
+        public bool Login(string id, string password)
         {
             #region
-
+            using (var dbcontext = new asimsContext())
+            {
+                var user = dbcontext.User
+                    .FirstOrDefault(u => u.Uphone == id && u.Upassword == password);
+                if (user != null)
+                    return true;
+                else
+                    return false;
+            }
             #endregion
-            return false;
         }
         /// <summary>
         /// 用户修改密码
@@ -41,12 +48,23 @@ namespace ASIMS.Models.Methods
         /// <param name="oldPassword"></param>
         /// <param name="newPassword"></param>
         /// <returns></returns>
-        public bool NewPassword(string id,string oldPassword,string newPassword)
+        public bool NewPassword(string id, string oldPassword, string newPassword)
         {
             #region
-
+            using (var dbcontext = new asimsContext())
+            {
+                var user = dbcontext.User
+                       .FirstOrDefault(u => u.Uphone == id && u.Upassword == oldPassword);
+                if (user != null)
+                {
+                    user.Upassword = newPassword;
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+                else
+                    return false;
+            }  
             #endregion
-            return false;
         }
         /// <summary>
         /// 修改用户信息
@@ -55,7 +73,7 @@ namespace ASIMS.Models.Methods
         /// <param name="user">用户对象</param>
         /// <param name="address">地址编号</param>
         /// <returns></returns>
-        public bool ModifyInformation(string id,User user,int address)
+        public bool ModifyInformation(string id, User user, int address)
         {
             #region
 

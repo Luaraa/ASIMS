@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASIMS", "ASIMS\ASIMS.csproj", "{37954553-6F2C-462B-AD90-71AA01210E9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASIMS", "ASIMS\ASIMS.csproj", "{7BDD3A1C-072B-4EFA-8A4E-02AAAB455A39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{37954553-6F2C-462B-AD90-71AA01210E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37954553-6F2C-462B-AD90-71AA01210E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37954553-6F2C-462B-AD90-71AA01210E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37954553-6F2C-462B-AD90-71AA01210E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BDD3A1C-072B-4EFA-8A4E-02AAAB455A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BDD3A1C-072B-4EFA-8A4E-02AAAB455A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BDD3A1C-072B-4EFA-8A4E-02AAAB455A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BDD3A1C-072B-4EFA-8A4E-02AAAB455A39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1D6444E0-4368-424E-A503-E873575834B6}
+		SolutionGuid = {4D9CE006-FA06-4B6A-9998-9ED5F44A6A1D}
 	EndGlobalSection
 EndGlobal
