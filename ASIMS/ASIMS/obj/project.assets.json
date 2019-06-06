@@ -12156,27 +12156,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\WanQBin\\.nuget\\packages\\": {},
-    "E:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Asus\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\课程设计\\信息系统综合设计\\汽车销售信息管理系统\\ASIMS\\ASIMS\\ASIMS.csproj",
+      "projectUniqueName": "D:\\Github\\ASIMS\\ASIMS\\ASIMS\\ASIMS.csproj",
       "projectName": "ASIMS",
-      "projectPath": "F:\\课程设计\\信息系统综合设计\\汽车销售信息管理系统\\ASIMS\\ASIMS\\ASIMS.csproj",
-      "packagesPath": "C:\\Users\\WanQBin\\.nuget\\packages\\",
-      "outputPath": "F:\\课程设计\\信息系统综合设计\\汽车销售信息管理系统\\ASIMS\\ASIMS\\obj\\",
+      "projectPath": "D:\\Github\\ASIMS\\ASIMS\\ASIMS\\ASIMS.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "D:\\Github\\ASIMS\\ASIMS\\ASIMS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\WanQBin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
