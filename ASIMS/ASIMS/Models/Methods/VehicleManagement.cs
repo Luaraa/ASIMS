@@ -27,9 +27,13 @@ namespace ASIMS.Models.Methods
         public Vehicle CheckVehicleThoughId(int id)
         {
             #region
-
+            using (var dbcontext = new asimsContext())
+            {
+                var vehicle = dbcontext.Vehicle
+                    .Single(vehicles => vehicles.Vno == id);
+                return vehicle;
+            }
             #endregion
-            return null;
         }
         /// <summary>
         /// 通过汽车类型查找汽车

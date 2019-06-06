@@ -58,9 +58,21 @@ namespace ASIMS.Models.Methods
         public bool ModifyInformation(string id,User user,int address)
         {
             #region
-
-            #endregion
-            return false;
+            using (var dbcontext = new asimsContext())
+            {
+                var users = dbcontext.User
+                    .Single(use => use.Uphone == id);
+                if (users != null)
+                {
+                    users = user;
+                    user.Uaddress = address;
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+                else
+                    return false;
+            }
+                #endregion
         }
     }
 }
