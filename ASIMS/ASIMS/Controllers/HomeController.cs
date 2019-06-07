@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using ASIMS.Models.Method;
-using ASIMS.Models.Methods;
-using ASIMS.Models.Tables;
 using Microsoft.AspNetCore.Mvc;
+using ASIMS.Models;
+using ASIMS.Models.Method;
 
 namespace ASIMS.Controllers
 {
@@ -14,12 +14,19 @@ namespace ASIMS.Controllers
         public IActionResult Index()
         {
             UserManagement method = new UserManagement();
-            List<User> users = method.ListAllUser();
-            OrderManagement order = new OrderManagement();
-            order.GetOneUserMarket("13279451762", 1);
-            order.GetSomeUserMarket("13279441762");
-            order.CheckMarket(1);
+            method.ListAllUser();
             return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

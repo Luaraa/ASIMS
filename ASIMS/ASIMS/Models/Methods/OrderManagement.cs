@@ -1,5 +1,4 @@
 ﻿using ASIMS.Models.Tables;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +20,11 @@ namespace ASIMS.Models.Methods
             return null;
         }
         /// <summary>
-        /// 查询员工经手的订单
+        /// 查询用户或员工经手的订单
         /// </summary>
-        /// <param name="id">员工id</param>
+        /// <param name="id">用户或员工id</param>
         /// <returns>订单列表</returns>
-        public List<Market> GetSomeStaffMarket(string id)
+        public List<Market> GetSomeoneMarket(string id)
         {
             #region
 
@@ -33,52 +32,17 @@ namespace ASIMS.Models.Methods
             return null;
         }
         /// <summary>
-        /// 获取员工经手的订单号为no的详细信息
+        /// 获取用户购买或员工经手的订单号为no的详细信息
         /// </summary>
-        /// <param name="id">员工id</param>
+        /// <param name="id">用户或员工id</param>
         /// <param name="no">订单号</param>
         /// <returns></returns>
-        public Market GetOneStaffMarket(string id, int no)
+        public Market GetOneMarket(string id,int no)
         {
             #region
 
             #endregion
             return null;
-        }
-        /// <summary>
-        /// 查询用户的订单
-        /// </summary>
-        /// <param name="id">用户id</param>
-        /// <returns>订单列表</returns>
-        public List<Market> GetSomeUserMarket(string id)
-        {
-            #region
-            using (var dbcontext = new asimsContext())
-            {
-                var markets = dbcontext.Market
-                    .FromSql("select * from asims.Market")
-                    .Where(m => m.Uphone == id)
-                    .ToList();
-                return markets;
-            }
-            #endregion
-        }
-        /// <summary>
-        /// 获取用户的订单号为no的详细信息
-        /// </summary>
-        /// <param name="id">用户id</param>
-        /// <param name="no">订单号</param>
-        /// <returns></returns>
-        public Market GetOneUserMarket(string id, int no)
-        {
-            #region
-            using (var dbcontext = new asimsContext())
-            {
-                var market = dbcontext.Market
-                    .FirstOrDefault(m => m.Uphone == id && m.Mno == no);
-                return market;
-            }
-            #endregion
         }
         /// <summary>
         /// 审核并通过订单，即订单状态置1
@@ -88,20 +52,9 @@ namespace ASIMS.Models.Methods
         public bool CheckMarket(int no)
         {
             #region
-            using (var dbcontext = new asimsContext())
-            {
-                var market = dbcontext.Market
-                    .FirstOrDefault(m => m.Mno == no);
-                if (market != null)
-                {
-                    market.Pflag = 1;
-                    dbcontext.SaveChanges();
-                    return true;
-                }
-                else
-                    return false;
-            }
+
             #endregion
+            return false;
         }
 
     }

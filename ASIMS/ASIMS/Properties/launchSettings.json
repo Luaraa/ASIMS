@@ -1,9 +1,13 @@
-﻿{
+{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/ASIMS",
+      "sslPort": 0
+    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:49332",
+      "applicationUrl": "http://localhost:60107",
       "sslPort": 0
     }
   },
@@ -18,10 +22,10 @@
     "ASIMS": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "http://localhost:5000"
     }
   }
 }

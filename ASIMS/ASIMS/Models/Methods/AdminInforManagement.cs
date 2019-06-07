@@ -1,5 +1,5 @@
 ﻿//管理员及销售人员信息管理模块
-//已全部完成
+
 using ASIMS.Models;
 using ASIMS.Models.Tables;
 using System.Linq;
@@ -19,10 +19,13 @@ namespace AdminInfor
             #region
             using (var dbcontext = new asimsContext())
             {
-                var staff = dbcontext.Staff
-                    .FirstOrDefault(s => s.Sphone == id && s.Spassword == password);
-                if (staff != null)
-                    return true;
+                foreach (var staff in dbcontext.Staff)
+                {
+                    if (staff.Sphone == id && staff.Spassword == password)
+                    {
+                        return true;
+                    }
+                }
             }
             #endregion
             return false;
