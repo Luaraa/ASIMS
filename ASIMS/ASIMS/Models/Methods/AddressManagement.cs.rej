@@ -1,0 +1,85 @@
+diff a/ASIMS/ASIMS/Models/Methods/AddressManagement.cs b/ASIMS/ASIMS/Models/Methods/AddressManagement.cs	(rejected hunks)
+@@ -10,40 +10,69 @@
+     public class AddressManagement
+     {
+         /// <summary>
+-        /// 插入地址
++        //根据地址号获取地址
+         /// </summary>
+-        /// <param name="address">地址</param>
+-        /// <returns>地址编号</returns>
+-        public int InsertAddress(Address address)
++        /// <param name="no">地址号</param>
++        /// <returns>地址</returns>
++        /// 
++
++        public Address GetOneAddress(int no) 
+         {
+             #region
+-
++            try
++            {
++                asimsContext Context = new asimsContext();
++                return Context.Find<Address>(no);
++            }
++            catch (Exception e)
++            {
++                return null;
++            }
+             #endregion
+-            return -1;
++           
+         }
++       
+         /// <summary>
+-        //根据地址号获取地址
++        /// 插入地址
+         /// </summary>
+-        /// <param name="no">地址号</param>
+-        /// <returns>地址</returns>
+-        public Address GetOneAddress(int no)
++        /// <param name="address">地址</param>
++        /// <returns>地址编号</returns>
++        public int InsertAddress(Address address)
+         {
+-            #region
+ 
++
++            #region
++            try{
++                asimsContext Context = new asimsContext();
++                Context.Add<Address>(address);
++                return address.Ano;
++            }
++            catch(Exception e)
++            {
++                return -1;
++            }
++           
+             #endregion
+-            return null;
+         }
+         /// <summary>
+         /// 根据地址号来删除地址
+         /// </summary>
+         /// <param name="no">地址号</param>
+         /// <returns>成功返回true</returns>
++        
+         public bool DeleteAddress(int no)
+         {
+             #region
+-
++            try
++            {
++                asimsContext Context = new asimsContext();
++                Context.Remove<Address>(this.GetOneAddress(no));
++                return true;
++            }catch(Exception e)
++            {
++                return false;
++            }
+             #endregion
+-            return false;
+         }
+         /// <summary>
+         /// 修改地址信息

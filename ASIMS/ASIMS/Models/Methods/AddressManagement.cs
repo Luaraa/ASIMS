@@ -50,23 +50,12 @@ namespace ASIMS.Models.Methods
         /// <param name="no">地址号</param>
         /// <param name="address">新地址</param>
         /// <returns></returns>
-        public bool ModifyAddress(int no,Address address)
+        public bool ModifyAddress(string no,Address address)
         {
             #region
-            using (var dbcontext = new asimsContext())
-            {
-                var addresss = dbcontext.Address
-                    .Single(addres => addres.Ano == no);
-                if (addresss != null)
-                {
-                    addresss = address;
-                    dbcontext.SaveChanges();
-                    return true;
-                }
-                else
-                    return false;
-            }
+
             #endregion
+            return false;
         }
     }
 }
