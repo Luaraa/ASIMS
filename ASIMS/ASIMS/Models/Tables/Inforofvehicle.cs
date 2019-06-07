@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ASIMS.Models
+namespace ASIMS.Models.Tables
 {
-    public partial class Infoofvehicle
+    public partial class Inforofvehicle
     {
-        public string Vno { get; set; }
-        public string Irank { get; set; }
-        public string Ibrand { get; set; }
+        public int Vno { get; set; }
         public string Iconstruction { get; set; }
         public string Idisplacement { get; set; }
         public string Ispeedbox { get; set; }

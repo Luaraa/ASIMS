@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ASIMS.Models;
+using ASIMS.Models.Method;
 
 namespace ASIMS.Controllers
 {
@@ -12,6 +13,8 @@ namespace ASIMS.Controllers
     {
         public IActionResult Index()
         {
+            UserManagement method = new UserManagement();
+            method.ListAllUser();
             return View();
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASIMS.Models.Tables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +20,13 @@ namespace ASIMS.Models.Method
         {
             List<User> users = new List<User>();
             #region
-
+            using (var dbcontext = new asimsContext())
+            {
+                foreach (var user in dbcontext.User)
+                {
+                    users.Add(user);
+                }
+            }
             #endregion
             return users;
         }
@@ -30,12 +37,14 @@ namespace ASIMS.Models.Method
         /// <returns>账号为id的用户</returns>
         public User GetUserDetail(string id)
         {
-            User user = new User();
             #region
-
-
+            using (var dbcontext = new asimsContext())
+            {
+                var user = dbcontext.User
+                    .Single(users => users.Uphone == id);
+                return user;
+            }
             #endregion
-            return user;
         }
     }
 }
